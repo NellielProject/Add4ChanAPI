@@ -6,6 +6,9 @@ namespace Add4ChanAPI;
 $plugin_id = 'nel-add-4chan-api';
 nel_plugins()->registerNamespace($plugin_id, 'Add4ChanAPI', '');
 
+$info = new Info();
+nel_plugins()->addMethod('nel-in-after-info-json', $info, 'addAttributes', $plugin_id, 10);
+
 $upload = new Upload();
 nel_plugins()->addMethod('nel-in-after-upload-json', $upload, 'addAttributes', $plugin_id, 10);
 
