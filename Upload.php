@@ -18,10 +18,10 @@ class Upload
     {
         $post = $upload->getParent();
         $raw_data['tim'] = (int) ($post->getData('post_time') .
-            str_pad((string) $post->getData('post_time_milli'), 3, '0', STR_PAD_LEFT));
+            str_pad((string) $post->getData('post_time_milli'), 6, '0', STR_PAD_RIGHT));
         $file_info = new SplFileInfo($upload->getData('original_filename'));
         $raw_data['filename'] = $file_info->getBasename('.' . $file_info->getExtension());
-        $raw_data['ext'] = $file_info->getExtension();
+        $raw_data['ext'] = '.' . $file_info->getExtension();
         $raw_data['fsize'] = $upload->getData('filesize');
         $raw_data['md5'] = base64_encode(hex2bin($upload->getData('md5')));
         $raw_data['w'] = $upload->getData('display_width');

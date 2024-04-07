@@ -15,7 +15,7 @@ class OPJSON
     {}
 
     // Not yet implemented:
-    // tag, unique_ips, archived, archived_on
+    // tag, unique_ips, archived, archived_on, m_img
     public function generate(Thread $thread): array
     {
         $post = $thread->firstPost();
