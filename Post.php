@@ -13,8 +13,11 @@ class Post
     function __construct()
     {}
 
+    //4Chan exclusive:
+    // since4pass
+
     // Not yet implemented:
-    // custom_spoiler, m_img, since4pass, country, counrty_name, board_flag, flag_name
+    // custom_spoiler, m_img, country, counrty_name, board_flag, flag_name
     public function addAttributes(array $raw_data, NellielPost $post): array
     {
         $uploads = $post->getUploads();
